@@ -2,6 +2,9 @@ package com.renan.ecomerce_api.dto;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.renan.ecomerce_api.model.Cliente;
+import com.renan.ecomerce_api.model.Pedido;
+
+import java.util.List;
 
 @JsonPropertyOrder({"id", "nome", "cpf", "telefone"})
 public class ClienteResponseDTO {
@@ -11,6 +14,9 @@ public class ClienteResponseDTO {
     private String cpf;
     private String telefone;
 
+    // O que será exibido da entidade Pedido
+    private List<String> pedidos;
+
     public ClienteResponseDTO(){}
 
     public ClienteResponseDTO(Cliente cliente){
@@ -18,6 +24,11 @@ public class ClienteResponseDTO {
         this.nome = cliente.getNome();
         this.cpf = cliente.getCpf();
         this.telefone = cliente.getTelefone();
+
+        // Relacionamento controlado
+        for(Pedido pedido : cliente.getPedidos()){
+            this.pedidos.add("ID: " + pedido.getId() + " - " + pedido.getNomePedido());
+        }
     }
 
     public Long getId(){
