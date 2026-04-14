@@ -1,4 +1,4 @@
-package com.renan.ecomerce_api.dto;
+package com.renan.ecomerce_api.dto.pedido;
 
 
 public class PedidoRequestDTO {

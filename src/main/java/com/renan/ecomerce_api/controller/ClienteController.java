@@ -1,7 +1,7 @@
 package com.renan.ecomerce_api.controller;
 
-import com.renan.ecomerce_api.dto.ClienteRequestDTO;
-import com.renan.ecomerce_api.dto.ClienteResponseDTO;
+import com.renan.ecomerce_api.dto.cliente.ClienteRequestDTO;
+import com.renan.ecomerce_api.dto.cliente.ClienteResponseDTO;
 import com.renan.ecomerce_api.model.Cliente;
 import com.renan.ecomerce_api.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;

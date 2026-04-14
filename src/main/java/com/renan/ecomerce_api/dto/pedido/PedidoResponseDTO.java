@@ -1,4 +1,4 @@
-package com.renan.ecomerce_api.dto;
+package com.renan.ecomerce_api.dto.pedido;
 
 import com.renan.ecomerce_api.model.Pedido;
 
@@ -22,6 +22,7 @@ public class PedidoResponseDTO{
         this.valorTotalPedido = pedido.getValorTotalPedido();
 
         // Relacionamento controlado
+
         if(pedido.getCliente() != null) {
             this.clienteId = pedido.getCliente().getId();
             this.nomeCliente = pedido.getCliente().getNome();
