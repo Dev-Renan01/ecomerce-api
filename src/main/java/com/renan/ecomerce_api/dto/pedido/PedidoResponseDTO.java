@@ -1,7 +1,9 @@
 package com.renan.ecomerce_api.dto.pedido;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.renan.ecomerce_api.model.Pedido;
 
+@JsonPropertyOrder({"id", "nomePedido", "data", "valorTotlPedido", "clienteId", "nomeCliente", "telefoneCliente"})
 public class PedidoResponseDTO{
 
     private Long id;

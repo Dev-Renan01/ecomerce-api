@@ -7,7 +7,7 @@ import com.renan.ecomerce_api.model.Pedido;
 import java.util.ArrayList;
 import java.util.List;
 
-@JsonPropertyOrder({"id", "nome", "cpf", "telefone"})
+@JsonPropertyOrder({"id", "nome", "cpf", "telefone", "pedidos"})
 public class ClienteResponseDTO {
 
     private Long id;
@@ -37,6 +37,10 @@ public class ClienteResponseDTO {
 
     public Long getId(){
         return id;
+    }
+
+    public List<String> getPedidos() {
+        return pedidos;
     }
 
     public String getNome() {

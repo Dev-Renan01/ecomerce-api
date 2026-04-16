@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "clientes")
+@RequestMapping(value = "/clientes")
 public class ClienteController {
 
     @Autowired
@@ -45,14 +45,14 @@ public class ClienteController {
         return ResponseEntity.ok(lista);
     }
 
-    @GetMapping(value = "{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<ClienteResponseDTO> findById(@PathVariable Long id){
        Cliente cliente = service.findById(id);
 
        return ResponseEntity.ok().body(new ClienteResponseDTO(cliente));
     }
 
-    @PutMapping(value = "{id}")
+    @PutMapping(value = "/{id}")
     public ResponseEntity<ClienteResponseDTO> update(@PathVariable Long id, @RequestBody ClienteRequestDTO dto){
         Cliente cliente = new Cliente();
         
@@ -67,7 +67,7 @@ public class ClienteController {
         return ResponseEntity.ok().body(new ClienteResponseDTO(clienteSalvo));
     }
 
-    @DeleteMapping(value = "{id}")
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<ClienteResponseDTO> deletebyId(@PathVariable Long id){
         service.delete(id);
 
