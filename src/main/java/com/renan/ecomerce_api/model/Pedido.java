@@ -2,6 +2,8 @@ package com.renan.ecomerce_api.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "pedido")
 public class Pedido {
@@ -24,6 +26,17 @@ public class Pedido {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
+    // Relacionamento coma a entidade - Item
+    @OneToMany(mappedBy = "pedido")
+    private List<Item> itens;
+
+    public List<Item> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<Item> itens) {
+        this.itens = itens;
+    }
 
     public Pedido(){}
 
