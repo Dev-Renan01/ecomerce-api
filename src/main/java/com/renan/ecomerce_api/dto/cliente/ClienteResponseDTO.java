@@ -26,11 +26,11 @@ public class ClienteResponseDTO {
         this.cpf = cliente.getCpf();
         this.telefone = cliente.getTelefone();
 
-        // Relacionamento controlado
+        // Relacionamento controlad com Pedido
         this.pedidos = new ArrayList<>();
         if(cliente.getPedidos() != null) {
             for (Pedido pedido : cliente.getPedidos()) {
-                this.pedidos.add("ID: " + pedido.getId() + " - " + pedido.getNomePedido());
+                this.pedidos.add("ID: " + pedido.getId() + "  | Nome do pedido " + pedido.getNomePedido());
             }
         }
     }

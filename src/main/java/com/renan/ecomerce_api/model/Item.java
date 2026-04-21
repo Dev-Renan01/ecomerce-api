@@ -10,7 +10,10 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String quantidade;
+
+    @Column(nullable = false)
     private String precoUnitario;
 
     // Relacionamento coma a entidade - Pedido
