@@ -42,7 +42,6 @@ public class PedidoService {
     }
 
     public void delete(Long id){
-
         Pedido pedido = findById(id);
 
         repository.delete(pedido);
