@@ -33,17 +33,13 @@ public class ClienteService {
 
     public Cliente update(Cliente cliente){
 
-        if(cliente.getId() == null){
-            throw new RuntimeException("informe um id válido!");
-        }
-        Cliente clienteExistente = repository.findById(cliente.getId())
-                .orElseThrow(() -> new RuntimeException("Cliente não encontrado!"));
+        Cliente salvar = findById(cliente.getId());
 
-        clienteExistente.setNome(cliente.getNome());
-        clienteExistente.setCpf(cliente.getCpf());
-        clienteExistente.setTelefone(cliente.getTelefone());
+        salvar.setNome(cliente.getNome());
+        salvar.setCpf(cliente.getCpf());
+        salvar.setTelefone(cliente.getTelefone());
 
-        return repository.save(clienteExistente);
+        return repository.save(salvar);
     }
 
     public void delete(Long id){
