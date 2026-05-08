@@ -83,7 +83,6 @@ public class PedidoController {
 
         pedidoService.delete(id);
         return ResponseEntity.noContent().build();
-
     }
 
 }
